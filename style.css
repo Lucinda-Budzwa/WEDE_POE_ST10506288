@@ -190,12 +190,16 @@ button:active, .btn-action:active, .view-btn:active {
     margin-bottom: 1.25rem;
 }
 
-.banner-container picture, .banner-container img {
+.banner-container picture {
+   display: block;
+   width: 100%;
+}
+.banner-container img {
     width: 100%;
-    height: auto;
+    height: 250px;
     display: block;
     object-fit: cover;
-    max-height: 420px;
+    object-position: center;
 }
 
 .tagline-container {
