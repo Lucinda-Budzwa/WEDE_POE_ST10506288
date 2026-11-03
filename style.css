@@ -1,0 +1,795 @@
+/* ==========================================================================
+   BAIRGS CLOTHING BOUTIQUE - MASTER STYLESHEET
+   Module: WEDE5020 - Part 2
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS RESET & DEFAULT BASE STYLES
+   -------------------------------------------------------------------------- */
+:root {
+    --primary-font: "Bodoni MT", "Bodoni 72", "Didot", "Cinzel", serif;
+    --secondary-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --color-bg: #fdfdfd;
+    --color-card-bg: #ffffff;
+    --color-text: #1a1a1a;
+    --color-border: #111111;
+    --color-light-border: #e0e0e0;
+    --color-accent: #333333;
+    --color-highlight: #f7f7f7;
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --transition-speed: 0.3s ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100%; /* Base 16px */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--primary-font);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 1.25rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   2. MAIN LAYOUT CONTAINER
+   -------------------------------------------------------------------------- */
+/* CONSISTENT PAGE SIZE FOR ALL WEBSITE PAGES */
+.main-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 900px;
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card-bg);
+    box-shadow: var(--shadow-subtle);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Keep the main content area consistent */
+main {
+    width: 100%;
+    flex: 1;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: 1.5rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & HEADINGS
+   -------------------------------------------------------------------------- */
+h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.section-heading {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION BAR & PSEUDO-CLASSES
+   -------------------------------------------------------------------------- */
+header {
+    text-align: center;
+}
+
+nav {
+    font-weight: bold;
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+nav a:hover {
+    color: #666666;
+    transform: translateY(-1px);
+}
+
+nav a:focus-visible {
+    outline: 2px dashed var(--color-border);
+    outline-offset: 4px;
+}
+
+nav a:active {
+    color: #000;
+    transform: translateY(1px);
+}
+
+.nav-divider {
+    color: #999;
+    user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. BUTTONS & INTERACTIVE CONTROLS
+   -------------------------------------------------------------------------- */
+button, .btn-action, .view-btn {
+    font-family: var(--primary-font);
+    font-size: 0.875rem;
+    padding: 0.6rem 1.8rem;
+    cursor: pointer;
+    background-color: var(--color-card-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all var(--transition-speed);
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .btn-action:hover, .view-btn:hover {
+    background-color: var(--color-border);
+    color: #ffffff;
+    box-shadow: var(--shadow-subtle);
+}
+
+button:focus-visible, .btn-action:focus-visible, .view-btn:focus-visible {
+    outline: 2px solid var(--color-border);
+    outline-offset: 3px;
+}
+
+button:active, .btn-action:active, .view-btn:active {
+    transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   6. HOME PAGE STYLES (BANNER & FEATURED PRODUCTS)
+   -------------------------------------------------------------------------- */
+.banner-container {
+    border: 1px solid var(--color-border);
+    padding: 0.5rem;
+    text-align: center;
+    background-color: var(--color-highlight);
+    margin-bottom: 1.25rem;
+}
+
+.banner-container picture, .banner-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 420px;
+}
+
+.tagline-container {
+    text-align: center;
+    margin: 1.25rem 0;
+}
+
+.tagline-container i {
+    font-size: 1.15rem;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive Grid for Featured & Trending Products */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.product-card {
+    border: 1px solid var(--color-light-border);
+    padding: 1.25rem;
+    text-align: center;
+    background: var(--color-card-bg);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-border);
+}
+
+.product-img {
+    width: 100%;
+    max-width: 200px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform var(--transition-speed);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.03);
+}
+
+/* --------------------------------------------------------------------------
+   7. PRODUCTS PAGE (CATEGORIES & CATALOG)
+   -------------------------------------------------------------------------- */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.category-box {
+    border: 1px solid var(--color-border);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    background: var(--color-highlight);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.category-box:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-subtle);
+}
+
+.category-box b {
+    display: block;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+}
+
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. ABOUT PAGE
+   -------------------------------------------------------------------------- */
+.content-box {
+    border: 1px solid var(--color-border);
+    padding: 3rem 2rem;
+    text-align: center;
+    line-height: 2;
+    font-size: 1.05rem;
+    background: var(--color-highlight);
+}
+
+/* --------------------------------------------------------------------------
+   9. CONTACT PAGE
+   -------------------------------------------------------------------------- */
+.contact-box {
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background-color: var(--color-card-bg);
+}
+
+.sub-title {
+    font-weight: bold;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    width: 60%;
+    max-width: 400px;
+    padding: 0.5rem;
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    background: transparent;
+    transition: border-color var(--transition-speed), background-color var(--transition-speed);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
+    outline: none;
+    border-bottom: 2px solid var(--color-border);
+    background-color: #fafafa;
+}
+
+.map-square {
+    border: 1px dashed var(--color-border);
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25rem auto;
+    width: 80%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: var(--color-highlight);
+}
+
+.store-info-details {
+    width: 80%;
+    max-width: 450px;
+    margin: 1.25rem auto 0;
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 2;
+}
+
+.status-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.status-list li.arrow {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* --------------------------------------------------------------------------
+   10. CART & CHECKOUT PAGE
+   -------------------------------------------------------------------------- */
+.cart-checkout-layout {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.5rem;
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cart-items-section, .cart-summary-section {
+    padding: 0.5rem;
+}
+
+.cart-table-inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table-inner td {
+    padding: 0.6rem 0.25rem;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.cart-table-inner img {
+    border: 1px solid var(--color-light-border);
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.checkout-box {
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    background: var(--color-highlight);
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.delivery-options {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.delivery-options label {
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   11. FOOTER
+   -------------------------------------------------------------------------- */
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. RESPONSIVE DESIGN - MEDIA QUERIES (TABLET & MOBILE)
+   -------------------------------------------------------------------------- */
+
+/* Tablet Breakpoint (<= 850px) */
+@media screen and (max-width: 850px) {
+    .main-wrapper {
+        padding: 1.5rem;
+    }
+
+    .trending-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cart-checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+        width: 80%;
+    }
+}
+
+/* Mobile Breakpoint (<= 580px) */
+@media screen and (max-width: 580px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .main-wrapper {
+        padding: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-divider {
+        display: none;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trending-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"] {
+        width: 100%;
+    }
+
+    .store-info-details {
+        width: 100%;
+    }
+
+    .content-box {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* FIX GOOGLE MAP SIZE */
+.map-square {
+    width: 100%;
+    max-width: 750px;
+    height: 300px;
+    margin: 25px auto;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.map-square iframe {
+    display: block;
+    width: 100%;
+    height: 300px;
+    border: 0;
+}
+
+.store-info-details {
+    position: static;
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   PART 3 - WEBSITE-WIDE CONSISTENCY AND PROFESSIONAL POLISH
+   ========================================================== */
+
+/* 1. Consistent page foundation */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px;
+    font-family: var(--secondary-font);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* 2. Same page width and alignment everywhere */
+.main-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 85vh;
+    margin: 0 auto;
+    padding: 32px;
+    border: 1px solid var(--color-light-border);
+    background-color: var(--color-card-bg);
+    box-shadow: var(--shadow-subtle);
+}
+
+/* 3. Consistent header and branding */
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1,
+.section-heading,
+h2,
+h3 {
+    font-family: var(--primary-font);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    letter-spacing: 0.12em;
+    line-height: 1.3;
+}
+
+/* 4. Stable navigation across all pages */
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px auto 12px;
+    padding: 8px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+nav a {
+    flex: 0 0 auto;
+    font-family: var(--secondary-font);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    padding: 8px 10px;
+}
+
+.nav-divider {
+    flex: 0 0 auto;
+}
+
+/* 5. Consistent content spacing */
+main {
+    width: 100%;
+}
+
+.section-heading {
+    margin: 28px 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+p {
+    font-family: var(--secondary-font);
+    line-height: 1.7;
+}
+
+/* 6. Consistent buttons */
+button,
+.btn-action,
+.view-btn {
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    min-height: 42px;
+    padding: 10px 22px;
+}
+
+/* 7. Consistent form controls */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    max-width: 100%;
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid var(--color-light-border);
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #777;
+    outline-offset: 2px;
+}
+
+/* 8. Consistent product cards and images */
+.product-card {
+    height: 100%;
+    min-width: 0;
+}
+
+.product-card img {
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* 9. Consistent cart and checkout layout */
+.cart-checkout-layout {
+    width: 100%;
+    align-items: start;
+}
+
+.cart-items-section,
+.cart-summary-section,
+.checkout-box {
+    min-width: 0;
+}
+
+/* 10. Consistent contact map */
+.map-square {
+    width: 100%;
+    max-width: 750px;
+    height: 300px;
+    margin: 24px auto;
+    overflow: hidden;
+    border: 1px solid var(--color-light-border);
+}
+
+.map-square iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 11. Consistent footer */
+footer {
+    width: 100%;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-light-border);
+    font-family: var(--secondary-font);
+}
+
+/* 12. Tablet layout */
+@media screen and (max-width: 850px) {
+    body {
+        padding: 16px;
+    }
+
+    .main-wrapper {
+        padding: 24px;
+    }
+
+    .cart-checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 13. Mobile layout */
+@media screen and (max-width: 580px) {
+    body {
+        padding: 8px;
+    }
+
+    .main-wrapper {
+        min-height: 100vh;
+        padding: 16px;
+    }
+
+    nav {
+        justify-content: flex-start;
+        gap: 4px;
+    }
+
+    nav a {
+        font-size: 0.72rem;
+        padding: 8px 7px;
+    }
+
+    .section-heading {
+        font-size: 1.2rem;
+    }
+
+    .category-grid,
+    .trending-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-checkout-layout {
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .checkout-box {
+        padding: 16px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+    }
+
+    .map-square {
+        height: 250px;
+    }
+}

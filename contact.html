@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Contact Bairgs Clothing Boutique, track your orders and locate our store in Randburg.">
+
+    <meta name="keywords" content="Bairgs Boutique, clothing boutique, contact, store locator, order tracking, Randburg">
+
+    <meta name="author" content="BAIRGS Clothing Boutique">
+
+    <title>Contact Us | Bairgs Clothing Boutique</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <!-- WEBSITE HEADER -->
+    <header>
+
+        <h1>BAIRGS CLOTHING BOUTIQUE</h1>
+
+        <nav aria-label="Main Navigation">
+
+            <a href="index.html">HOME</a>
+            <span class="nav-divider">|</span>
+
+            <a href="products.html">PRODUCTS</a>
+            <span class="nav-divider">|</span>
+
+            <a href="about.html">ABOUT</a>
+            <span class="nav-divider">|</span>
+
+            <a href="contact.html" aria-current="page">CONTACT US</a>
+            <span class="nav-divider">|</span>
+
+            <a href="products.html">[SEARCH]</a>
+            <span class="nav-divider">|</span>
+
+            <a href="cart.html">CART</a>
+
+        </nav>
+
+    </header>
+
+    <hr>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <h2 class="section-heading">CONTACT US</h2>
+
+        <!-- TRACK ORDER SECTION -->
+        <section class="contact-box">
+
+            <span class="sub-title">TRACK YOUR ORDER</span>
+
+            <div class="form-group">
+
+                <label for="order-number">Order Number:</label>
+
+                <input
+                    type="text"
+                    id="order-number"
+                    name="order-number"
+                    placeholder="e.g. BG-2026-987"
+                    required
+                >
+
+            </div>
+
+            <button type="button" id="trackOrderBtn">
+                [TRACK ORDER]
+            </button>
+
+            <p id="trackMessage" aria-live="polite"></p>
+
+        </section>
+
+
+        <!-- ORDER STATUS SECTION -->
+        <section class="contact-box">
+
+            <span class="sub-title">ORDER STATUS</span>
+
+            <ul class="status-list">
+
+                <li>Order Confirmed</li>
+
+                <li class="arrow">&darr;</li>
+
+                <li>Payment Received</li>
+
+                <li class="arrow">&darr;</li>
+
+                <li>Order Processing</li>
+
+                <li class="arrow">&darr;</li>
+
+                <li>Ready for Delivery / Collection</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- STORE LOCATOR SECTION -->
+        <section class="contact-box">
+
+            <span class="sub-title">STORE LOCATOR</span>
+
+            <div class="form-group">
+
+                <label for="location">Enter Your Location:</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="e.g. Randburg, Sandton"
+                    required
+                >
+
+            </div>
+
+            <button type="button" id="findStoreBtn">
+                [FIND STORE]
+            </button>
+
+            <p id="storeMessage" aria-live="polite"></p>
+
+            <!-- INTERACTIVE GOOGLE MAP -->
+            <div class="map-square">
+
+                <iframe
+                    src="https://maps.google.com/maps?q=Randburg%20Square%20Mall%2C%20Randburg%2C%20South%20Africa&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="BAIRGS Clothing Boutique demonstration store location">
+                </iframe>
+
+            </div>
+
+            <!-- STORE INFORMATION -->
+            <div class="store-info-details">
+
+                <p>
+                    <b>Store Name:</b>
+                    Bairgs Clothing Boutique
+                </p>
+
+                <p>
+                    <b>Address:</b>
+                    Randburg Square Mall, Randburg
+                </p>
+
+                <p>
+                    <b>Opening Hours:</b>
+                    Mon - Sat: 09:00 - 18:00 |
+                    Sun: 10:00 - 16:00
+                </p>
+
+                <p>
+                    <small>
+                        Map location is provided for demonstration purposes.
+                        BAIRGS is a fictional boutique created for an academic project.
+                    </small>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT INFORMATION -->
+        <section class="contact-box">
+
+            <span class="sub-title">GET IN TOUCH</span>
+
+            <p>
+                Have questions about our products or services?
+                Contact Bairgs Clothing Boutique for assistance.
+            </p>
+
+            <p>
+                <b>Customer Support:</b>
+                Our team is available during store operating hours.
+            </p>
+
+        </section>
+
+
+        <!-- CUSTOMER CONTACT FORM -->
+        <section class="contact-box">
+
+            <span class="sub-title">SEND US A MESSAGE</span>
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label for="customerName">Full Name:</label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        placeholder="Enter your full name"
+                        required
+                        minlength="2"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerEmail">Email Address:</label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        name="customerEmail"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">Subject:</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter your subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerMessage">Message:</label>
+
+                    <textarea
+                        id="customerMessage"
+                        name="customerMessage"
+                        rows="5"
+                        placeholder="Write your message here"
+                        required
+                        minlength="10"
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    [SEND MESSAGE]
+                </button>
+
+                <p id="contactMessage" aria-live="polite"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- WEBSITE FOOTER -->
+    <footer>
+
+        <p>
+            DELIVERY |
+            IN-STORE COLLECTIONS |
+            RETURNS |
+            TRACK ORDER |
+            STORE LOCATOR |
+            PRIVACY &amp; POLICIES
+        </p>
+
+        <p>
+            &copy; 2026 BAIRGS. All rights reserved.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<!-- EXISTING WEBSITE JAVASCRIPT -->
+<script src="script.js"></script>
+
+
+<!-- CONTACT PAGE JAVASCRIPT -->
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // TRACK ORDER FUNCTION
+    const trackButton = document.getElementById("trackOrderBtn");
+
+    if (trackButton) {
+
+        trackButton.addEventListener("click", function () {
+
+            const orderNumber =
+                document.getElementById("order-number").value.trim();
+
+            const message =
+                document.getElementById("trackMessage");
+
+            if (orderNumber === "") {
+
+                message.textContent =
+                    "Please enter your order number.";
+
+            } else {
+
+                message.textContent =
+                    "Order number " + orderNumber +
+                    " received. Live order tracking requires a connected order system.";
+
+            }
+
+        });
+
+    }
+
+
+    // STORE LOCATOR FUNCTION
+    const storeButton = document.getElementById("findStoreBtn");
+
+    if (storeButton) {
+
+        storeButton.addEventListener("click", function () {
+
+            const location =
+                document.getElementById("location").value.trim();
+
+            const message =
+                document.getElementById("storeMessage");
+
+            if (location === "") {
+
+                message.textContent =
+                    "Please enter your location.";
+
+            } else {
+
+                message.textContent =
+                    "Our listed demonstration store is at Randburg Square Mall, Randburg. Please contact the store for directions.";
+
+            }
+
+        });
+
+    }
+
+
+    // CONTACT FORM VALIDATION
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+
+        contactForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("customerName").value.trim();
+
+            const email =
+                document.getElementById("customerEmail").value.trim();
+
+            const subject =
+                document.getElementById("subject").value.trim();
+
+            const message =
+                document.getElementById("customerMessage").value.trim();
+
+            const feedback =
+                document.getElementById("contactMessage");
+
+
+            if (!name || !email || !subject || !message) {
+
+                feedback.textContent =
+                    "Please complete all required fields.";
+
+                return;
+
+            }
+
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+
+                feedback.textContent =
+                    "Please enter a valid email address.";
+
+                return;
+
+            }
+
+
+            if (message.length < 10) {
+
+                feedback.textContent =
+                    "Your message must contain at least 10 characters.";
+
+                return;
+
+            }
+
+
+            feedback.textContent =
+                "Thank you, " + name +
+                "! Your message has been received successfully.";
+
+
+            contactForm.reset();
+
+        });
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+

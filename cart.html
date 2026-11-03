@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Shop BAIRGS Clothing Boutique online. Review your shopping cart, choose delivery or collection, and complete your checkout details.">
+    <meta name="keywords" content="BAIRGS, clothing boutique, online shopping, fashion, shopping cart, checkout">
+    <meta name="author" content="BAIRGS Clothing Boutique">
+
+    <title>Shopping Cart and Checkout | BAIRGS Clothing Boutique</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-wrapper">
+
+        <header>
+            <h1>BAIRGS CLOTHING BOUTIQUE</h1>
+
+            <nav aria-label="Main Navigation">
+                <a href="index.html">HOME</a>
+                <span class="nav-divider">|</span>
+
+                <a href="products.html">PRODUCTS</a>
+                <span class="nav-divider">|</span>
+
+                <a href="about.html">ABOUT</a>
+                <span class="nav-divider">|</span>
+
+                <a href="contact.html">CONTACT US</a>
+                <span class="nav-divider">|</span>
+
+                <a href="products.html">[SEARCH]</a>
+                <span class="nav-divider">|</span>
+
+                <a href="cart.html" aria-current="page">CART</a>
+            </nav>
+        </header>
+
+        <hr>
+
+        <main>
+            <h2 class="section-heading">SHOPPING CART AND CHECKOUT</h2>
+
+            <section class="cart-checkout-layout">
+
+                <div class="cart-items-section">
+                    <b>SHOPPING CART</b>
+                    <hr>
+
+                    <table class="cart-table-inner" id="cartItems"
+                           aria-label="Shopping cart items">
+                        <tbody id="cartItemsBody">
+                            <!-- Cart products will appear here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cart-summary-section">
+                    <b>ORDER SUMMARY</b>
+                    <hr>
+
+                    <p>SUBTOTAL: R<span id="cartSubtotal">0</span></p>
+
+                    <p>DELIVERY: R<span id="deliveryFee">0</span></p>
+
+                    <hr>
+
+                    <p>
+                        <b>TOTAL: R<span id="cartTotal">0</span></b>
+                    </p>
+                </div>
+
+            </section>
+
+            <section class="checkout-box">
+
+                <h3 style="text-align: center; margin-bottom: 1.5rem; letter-spacing: 0.1em;">
+                    CHECKOUT DETAILS
+                </h3>
+
+                <form class="checkout-form" id="checkoutForm">
+
+                    <div class="form-group" style="width: 100%; text-align: center;">
+                        <label for="name">Full Name:</label><br>
+                        <input type="text" id="name" name="name"
+                               autocomplete="name" required>
+                    </div>
+
+                    <div class="form-group" style="width: 100%; text-align: center;">
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email"
+                               autocomplete="email" required>
+                    </div>
+
+                    <div class="form-group" style="width: 100%; text-align: center;">
+                        <label for="phone">Phone:</label><br>
+                        <input type="tel" id="phone" name="phone"
+                               autocomplete="tel" required>
+                    </div>
+
+                    <div class="form-group" style="width: 100%; text-align: center;">
+                        <label for="address">Address:</label><br>
+                        <input type="text" id="address" name="address"
+                               autocomplete="street-address" required>
+                    </div>
+
+                    <div class="delivery-options">
+                        <b>DELIVERY OPTION:</b><br><br>
+
+                        <label>
+                            <input type="radio" name="delivery"
+                                   value="home" checked>
+                            Home Delivery
+                        </label>
+
+                        &nbsp;&nbsp;
+
+                        <label>
+                            <input type="radio" name="delivery"
+                                   value="instore">
+                            In-store Collection
+                        </label>
+                    </div>
+
+                    <p id="checkoutMessage" role="status"
+                       aria-live="polite"></p>
+
+                    <button type="submit" class="btn-action">
+                        [PLACE ORDER]
+                    </button>
+
+                </form>
+
+                <p style="text-align: center; font-size: 0.85rem;">
+                    Please note: This is a demonstration checkout.
+                    No actual payment or order submission is processed.
+                </p>
+
+            </section>
+        </main>
+
+        <hr>
+
+        <footer>
+            <p>
+                DELIVERY | IN-STORE COLLECTIONS | RETURNS |
+                TRACK ORDER | STORE LOCATOR | PRIVACY &amp; POLICIES
+            </p>
+
+            <p>&copy; 2026 BAIRGS. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Checkout form validation and demonstration confirmation
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const checkoutForm = document.getElementById("checkoutForm");
+            const checkoutMessage = document.getElementById("checkoutMessage");
+
+            checkoutForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                if (!checkoutForm.checkValidity()) {
+                    checkoutForm.reportValidity();
+                    return;
+                }
+
+                checkoutMessage.textContent =
+                    "Your checkout details have been received successfully. This is a demonstration; no real order or payment has been processed.";
+
+                checkoutMessage.style.color = "green";
+
+                checkoutForm.reset();
+            });
+
+        });
+    </script>
+
+</body>
+</html>

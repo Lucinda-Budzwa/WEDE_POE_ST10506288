@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO INFORMATION -->
+    <meta name="description" content="Explore elegant women's clothing, men's fashion, shoes and handbags at Bairgs Clothing Boutique.">
+
+    <meta name="keywords" content="Bairgs Boutique, women's clothing, men's clothing, shoes, handbags, fashion">
+
+    <meta name="author" content="BAIRGS Clothing Boutique">
+
+    <title>Products | Bairgs Clothing Boutique</title>
+
+    <style>
+        /* GENERAL STYLES */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Bodoni MT", "Bodoni 72", serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .main-wrapper {
+            width: 100%;
+            max-width: 1012px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid black;
+            margin: 20px 0;
+        }
+
+        /* HEADINGS */
+        .section-heading {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* CATEGORIES */
+        .category-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px;
+        }
+
+        .category-box {
+            border: 1px solid black;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .view-btn {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 5px 20px;
+            margin-top: 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+
+        .view-btn:hover {
+            background: black;
+            color: white;
+        }
+
+        /* PRODUCT GRID */
+        .product-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            cursor: zoom-in;
+        }
+
+        button {
+            font-family: "Bodoni MT", serif;
+            padding: 5px 15px;
+            cursor: pointer;
+            background: white;
+            border: 1px solid black;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            background: black;
+            color: white;
+        }
+
+        #productSearch {
+            padding: 10px;
+            width: 250px;
+            max-width: 100%;
+            font-family: "Bodoni MT", serif;
+            border: 1px solid black;
+        }
+
+        footer {
+            font-size: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media screen and (max-width: 700px) {
+
+            body {
+                padding: 8px;
+            }
+
+            .main-wrapper {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            .category-table,
+            .product-table {
+                border-spacing: 5px;
+            }
+
+            .product-card {
+                display: block;
+                width: 100%;
+            }
+
+            .product-img {
+                height: 200px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main-wrapper">
+
+    <!-- WEBSITE HEADER -->
+    <header>
+
+        <h1>BAIRGS CLOTHING BOUTIQUE</h1>
+
+        <!-- MAIN NAVIGATION -->
+        <nav aria-label="Main navigation">
+
+            <a href="index.html">HOME</a> |
+            <a href="products.html" aria-current="page">PRODUCTS</a> |
+            <a href="about.html">ABOUT</a> |
+            <a href="contact.html">CONTACT US</a> |
+            <a href="#productSearch">[SEARCH]</a> |
+            <a href="cart.html">CART</a>
+
+        </nav>
+
+    </header>
+
+    <hr>
+
+    <main>
+
+        <!-- PRODUCT CATEGORIES -->
+        <h2 class="section-heading">OUR CATEGORIES</h2>
+
+        <table class="category-table">
+
+            <tr>
+                <td width="50%" class="category-box">
+                    <b>WOMEN'S CLOTHING</b><br>
+                    <a href="#women-products" class="view-btn">[VIEW]</a>
+                </td>
+
+                <td width="50%" class="category-box">
+                    <b>MEN'S CLOTHING</b><br>
+                    <a href="#men-products" class="view-btn">[VIEW]</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="category-box">
+                    <b>SHOES</b><br>
+                    <a href="#shoe-products" class="view-btn">[VIEW]</a>
+                </td>
+
+                <td class="category-box">
+                    <b>BAGS</b><br>
+                    <a href="#bag-products" class="view-btn">[VIEW]</a>
+                </td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <!-- TRENDING PRODUCTS -->
+        <h3 class="section-heading">TRENDING PRODUCTS</h3>
+
+        <!-- PRODUCT SEARCH -->
+        <div style="text-align: center; margin-bottom: 20px;">
+
+            <label for="productSearch">Search products:</label>
+
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="Search for products..."
+                aria-label="Search products by name"
+            >
+
+        </div>
+
+        <!-- PRODUCT LIST -->
+        <table class="product-table">
+
+            <tr>
+
+                <!-- WOMEN'S CLOTHING -->
+                <td width="25%" class="product-card" id="women-products">
+
+                    <img
+                        src="images/women.jpg"
+                        alt="Sienna elegant women's coat"
+                        class="product-img"
+                    >
+
+                    <b>SIENNA COAT</b><br>
+                    <small>R899</small><br><br>
+
+                    <button type="button">[ADD TO CART]</button>
+
+                </td>
+
+
+                <!-- MEN'S CLOTHING -->
+                <td width="25%" class="product-card" id="men-products">
+
+                    <img
+                        src="images/men.jpg"
+                        alt="Ethan stylish men's shirt"
+                        class="product-img"
+                    >
+
+                    <b>ETHAN SHIRT</b><br>
+                    <small>R399</small><br><br>
+
+                    <button type="button">[ADD TO CART]</button>
+
+                </td>
+
+
+                <!-- SHOES -->
+                <td width="25%" class="product-card" id="shoe-products">
+
+                    <img
+                        src="images/shoes.jpg"
+                        alt="Classic men's loafers"
+                        class="product-img"
+                    >
+
+                    <b>CLASSIC MEN'S LOAFERS</b><br>
+                    <small>R500</small><br><br>
+
+                    <button type="button">[ADD TO CART]</button>
+
+                </td>
+
+
+                <!-- BAGS -->
+                <td width="25%" class="product-card" id="bag-products">
+
+                    <img
+                        src="images/bag.jpg"
+                        alt="Serenity elegant women's handbag"
+                        class="product-img"
+                    >
+
+                    <b>SERENITY HANDBAG</b><br>
+                    <small>R999</small><br><br>
+
+                    <button type="button">[ADD TO CART]</button>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </main>
+
+    <hr>
+
+    <!-- WEBSITE FOOTER -->
+    <footer>
+
+        <p>
+            DELIVERY | IN-STORE COLLECTIONS | RETURNS |
+            TRACK ORDER | STORE LOCATOR | PRIVACY &amp; POLICIES
+        </p>
+
+        <p>&copy; 2026 BAIRGS. All rights reserved.</p>
+
+    </footer>
+
+</div>
+
+<!-- EXISTING JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
